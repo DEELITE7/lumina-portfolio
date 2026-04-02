@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Command } from "lucide-react";
 
 const navLinks = [
   { label: "About", href: "#about" },
   { label: "Projects", href: "#projects" },
+  { label: "Skills", href: "#skills" },
   { label: "Experience", href: "#experience" },
+  { label: "Blog", href: "#blog" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -17,7 +19,6 @@ const Navbar = () => {
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 50);
-
       const sections = navLinks.map((l) => l.href.replace("#", ""));
       for (const id of [...sections].reverse()) {
         const el = document.getElementById(id);
@@ -37,6 +38,10 @@ const Navbar = () => {
     el?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const openCommandPalette = () => {
+    window.dispatchEvent(new KeyboardEvent("keydown", { key: "k", metaKey: true }));
+  };
+
   return (
     <>
       <motion.nav
@@ -47,28 +52,28 @@ const Navbar = () => {
           scrolled ? "glass-strong shadow-lg shadow-background/50" : ""
         }`}
       >
-        <div className="container mx-auto flex items-center justify-between h-16 px-6">
+        <div className="container mx-auto flex items-center justify-between h-14 px-6">
           <motion.a
             href="#"
             onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}
-            className="text-xl font-display font-bold gradient-text"
+            className="text-lg font-display font-bold gradient-text"
             whileHover={{ scale: 1.05 }}
           >
-            Portfolio
+            AM
           </motion.a>
 
           {/* Desktop links */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
               <motion.button
                 key={link.href}
                 onClick={() => scrollTo(link.href)}
-                className={`text-sm font-medium transition-colors relative ${
+                className={`text-[13px] font-medium transition-colors relative ${
                   activeSection === link.href.replace("#", "")
                     ? "text-primary"
                     : "text-muted-foreground hover:text-foreground"
                 }`}
-                whileHover={{ y: -2 }}
+                whileHover={{ y: -1 }}
               >
                 {link.label}
                 {activeSection === link.href.replace("#", "") && (
@@ -79,6 +84,16 @@ const Navbar = () => {
                 )}
               </motion.button>
             ))}
+
+            {/* Cmd+K button */}
+            <motion.button
+              onClick={openCommandPalette}
+              className="flex items-center gap-1.5 text-[11px] text-muted-foreground/60 border border-border/50 rounded-lg px-2.5 py-1 hover:text-muted-foreground hover:border-border transition-colors"
+              whileHover={{ scale: 1.02 }}
+            >
+              <Command size={11} />
+              <span className="font-mono">K</span>
+            </motion.button>
           </div>
 
           {/* Mobile toggle */}
@@ -87,7 +102,7 @@ const Navbar = () => {
             onClick={() => setMobileOpen(!mobileOpen)}
             whileTap={{ scale: 0.9 }}
           >
-            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+            {mobileOpen ? <X size={22} /> : <Menu size={22} />}
           </motion.button>
         </div>
       </motion.nav>
@@ -99,17 +114,17 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-40 glass-strong pt-20"
+            className="fixed inset-0 z-40 glass-strong pt-16"
           >
-            <div className="flex flex-col items-center gap-8 pt-12">
+            <div className="flex flex-col items-center gap-6 pt-12">
               {navLinks.map((link, i) => (
                 <motion.button
                   key={link.href}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.1 }}
+                  transition={{ delay: i * 0.08 }}
                   onClick={() => scrollTo(link.href)}
-                  className="text-2xl font-display font-semibold text-foreground hover:text-primary transition-colors"
+                  className="text-xl font-display font-semibold text-foreground hover:text-primary transition-colors"
                 >
                   {link.label}
                 </motion.button>
