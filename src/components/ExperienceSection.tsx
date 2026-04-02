@@ -1,0 +1,98 @@
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+import { Briefcase } from "lucide-react";
+
+const experiences = [
+  {
+    role: "Senior Frontend Engineer",
+    company: "TechVision Inc.",
+    period: "2023 — Present",
+    description: "Leading the frontend architecture for a SaaS platform serving 500K+ users. Building design systems and mentoring junior developers.",
+  },
+  {
+    role: "Full-Stack Developer",
+    company: "StartupHub",
+    period: "2021 — 2023",
+    description: "Built and launched 3 products from scratch. Implemented real-time features, payment integrations, and scalable APIs.",
+  },
+  {
+    role: "Frontend Developer",
+    company: "DigitalCraft Agency",
+    period: "2020 — 2021",
+    description: "Developed responsive web applications for enterprise clients. Focused on performance optimization and accessibility.",
+  },
+  {
+    role: "Junior Developer",
+    company: "CodeBase Co.",
+    period: "2019 — 2020",
+    description: "Started my career building React components and learning best practices in a fast-paced team environment.",
+  },
+];
+
+const ExperienceSection = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  return (
+    <section id="experience" className="py-32 relative">
+      <div className="container mx-auto px-6" ref={ref}>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="mb-16"
+        >
+          <p className="text-primary font-medium mb-2 tracking-widest uppercase text-sm">Career</p>
+          <h2 className="text-4xl sm:text-5xl font-display font-bold">
+            My <span className="gradient-text">experience</span>
+          </h2>
+        </motion.div>
+
+        {/* Timeline */}
+        <div className="relative">
+          {/* Vertical line */}
+          <div className="absolute left-6 top-0 bottom-0 w-px bg-border md:left-1/2 md:-translate-x-px" />
+
+          <div className="space-y-12">
+            {experiences.map((exp, i) => (
+              <motion.div
+                key={exp.company}
+                initial={{ opacity: 0, y: 40 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: i * 0.15 }}
+                className={`relative flex items-start gap-8 ${
+                  i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                }`}
+              >
+                {/* Timeline dot */}
+                <div className="absolute left-6 md:left-1/2 w-3 h-3 rounded-full bg-primary -translate-x-1.5 mt-6 glow-primary z-10" />
+
+                {/* Card */}
+                <div className={`ml-16 md:ml-0 md:w-[calc(50%-2rem)] ${i % 2 === 0 ? "md:pr-4" : "md:pl-4"}`}>
+                  <motion.div
+                    className="glass rounded-xl p-6 group"
+                    whileHover={{ y: -4, boxShadow: "0 0 30px -10px hsl(187 80% 55% / 0.2)" }}
+                  >
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                        <Briefcase size={16} />
+                      </div>
+                      <span className="text-xs text-muted-foreground font-medium">{exp.period}</span>
+                    </div>
+                    <h3 className="text-lg font-display font-semibold text-foreground group-hover:text-primary transition-colors">
+                      {exp.role}
+                    </h3>
+                    <p className="text-sm text-primary/80 mb-3">{exp.company}</p>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{exp.description}</p>
+                  </motion.div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ExperienceSection;
