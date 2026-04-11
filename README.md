@@ -21,7 +21,7 @@ This project is ideal for developers who want a visually strong portfolio withou
 
 ---
 
-## Features
+## Features.
 
 ### Public Portfolio
 - Hero section
