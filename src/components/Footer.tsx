@@ -11,7 +11,6 @@ const Footer = () => {
             whileHover={{ color: "hsl(187 80% 55%)" }}
           >
             © {new Date().getFullYear()} Elebiemayo Iseoluwa.
-            <Heart size={14} className="text-primary" /> and React
           </motion.p>
 
           <div className="flex items-center gap-4">
