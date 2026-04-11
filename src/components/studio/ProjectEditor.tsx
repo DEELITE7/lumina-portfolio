@@ -134,7 +134,7 @@ const ProjectEditor = ({ project, onSave, onCancel }: Props) => {
                 onChange={(e) => update("category", e.target.value)}
                 className="w-full rounded-lg border border-border/50 bg-background/50 px-3 py-2 text-sm"
               >
-                {["frontend", "backend", "full-stack", "mobile", "ai", "dsa", "open-source"].map((c) => (
+                {["frontend", "backend", "full-stack", "mobile", "ai", "dsa", "open-source", "cloud"].map((c) => (
                   <option key={c} value={c}>{c}</option>
                 ))}
               </select>
@@ -166,11 +166,12 @@ const ProjectEditor = ({ project, onSave, onCancel }: Props) => {
 
         {/* Links */}
         <div className="glass rounded-2xl p-6 space-y-4">
-          <h2 className="text-lg font-display font-semibold">Links</h2>
+          <h2 className="text-lg font-display font-semibold">Links & Media</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <Field label="Live URL" field="live_url" placeholder="https://..." />
             <Field label="GitHub URL" field="github_url" placeholder="https://github.com/..." />
           </div>
+          <Field label="Thumbnail URL" field="thumbnail_url" placeholder="/project-covers/my-project.jpg or https://..." />
         </div>
 
         {/* Case study */}
