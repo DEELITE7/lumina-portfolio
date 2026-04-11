@@ -59,7 +59,7 @@ const Navbar = () => {
             className="text-lg font-display font-bold gradient-text"
             whileHover={{ scale: 1.05 }}
           >
-            AM
+            EI
           </motion.a>
 
           {/* Desktop links */}

@@ -69,9 +69,9 @@ const ContactSection = () => {
 
           <motion.div initial={{ opacity: 0 }} animate={isInView ? { opacity: 1 } : {}} transition={{ delay: 0.5 }} className="flex justify-center gap-4 mt-8">
             {[
-              { icon: Github, href: "https://github.com", label: "GitHub" },
-              { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-              { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
+              { icon: Github, href: "https://github.com/MANNYTECH01", label: "GitHub" },
+              { icon: Linkedin, href: "https://www.linkedin.com/in/iseoluwa-emmanuel-7503a234b/", label: "LinkedIn" },
+              { icon: Twitter, href: "https://x.com/Manny__tech", label: "Twitter" },
             ].map(({ icon: Icon, href, label }) => (
               <motion.a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className="w-12 h-12 rounded-xl glass flex items-center justify-center text-muted-foreground hover:text-primary transition-colors" whileHover={{ y: -4, scale: 1.1 }} whileTap={{ scale: 0.95 }}>
                 <Icon size={20} />

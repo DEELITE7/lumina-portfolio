@@ -25,7 +25,7 @@ const AboutSection = () => {
         >
           <p className="text-primary font-medium mb-2 tracking-widest uppercase text-sm">About Me</p>
           <h2 className="text-4xl sm:text-5xl font-display font-bold">
-            Crafting digital <span className="gradient-text">experiences</span>
+            Building scalable <span className="gradient-text">systems</span>
           </h2>
         </motion.div>
 
@@ -39,7 +39,7 @@ const AboutSection = () => {
             {/* Avatar */}
             <div className="relative w-24 h-24 mb-8">
               <div className="w-full h-full rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center text-3xl font-display font-bold text-primary-foreground">
-                A
+                EI
               </div>
               <motion.div
                 className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-primary/30 to-accent/30 -z-10 blur-sm"
@@ -49,15 +49,15 @@ const AboutSection = () => {
             </div>
 
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              I'm a passionate full-stack developer with 5+ years of experience building
-              modern web applications. I specialize in creating performant, accessible,
-              and visually stunning digital products.
+              I'm a backend and cloud developer focused on building reliable APIs,
+              cloud infrastructure, and server-side systems. I work with Node.js,
+              Express, PostgreSQL, Docker, and Terraform to deliver clean,
+              production-ready solutions.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              When I'm not coding, you'll find me exploring new technologies,
-              contributing to open-source projects, or designing interfaces that push
-              creative boundaries. I believe great software is where engineering
-              excellence meets beautiful design.
+              I enjoy solving real problems — from designing RESTful APIs and setting up
+              CI/CD pipelines to provisioning infrastructure as code. I'm always learning,
+              currently deepening my skills in AWS, containerization, and DevOps best practices.
             </p>
           </motion.div>
 
