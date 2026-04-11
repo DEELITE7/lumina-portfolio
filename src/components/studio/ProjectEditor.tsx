@@ -26,6 +26,7 @@ const ProjectEditor = ({ project, onSave, onCancel }: Props) => {
     published: project?.published || false,
     live_url: project?.live_url || "",
     github_url: project?.github_url || "",
+    thumbnail_url: project?.thumbnail_url || "",
     problem: project?.problem || "",
     solution: project?.solution || "",
     my_role: project?.my_role || "",
