@@ -10,7 +10,7 @@ const Footer = () => {
             className="text-sm text-muted-foreground flex items-center gap-1"
             whileHover={{ color: "hsl(187 80% 55%)" }}
           >
-            © {new Date().getFullYear()} Elebiemayo Iseoluwa. Built with{" "}
+            © {new Date().getFullYear()} Elebiemayo Iseoluwa.
             <Heart size={14} className="text-primary" /> and React
           </motion.p>
 
