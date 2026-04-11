@@ -43,9 +43,9 @@ const CommandPalette = () => {
     { id: "testimonials", label: "Testimonials", icon: Sparkles, action: () => scrollTo("#testimonials"), category: "Navigation" },
     { id: "contact", label: "Contact Me", icon: Mail, action: () => scrollTo("#contact"), category: "Navigation" },
     { id: "resume", label: "Download Resume", icon: FileText, action: () => window.open("#", "_blank"), category: "Actions" },
-    { id: "github", label: "Open GitHub", icon: Github, action: () => window.open("https://github.com", "_blank"), category: "Links" },
-    { id: "linkedin", label: "Open LinkedIn", icon: Linkedin, action: () => window.open("https://linkedin.com", "_blank"), category: "Links" },
-    { id: "twitter", label: "Open Twitter", icon: Twitter, action: () => window.open("https://twitter.com", "_blank"), category: "Links" },
+    { id: "github", label: "Open GitHub", icon: Github, action: () => window.open("https://github.com/MANNYTECH01", "_blank"), category: "Links" },
+    { id: "linkedin", label: "Open LinkedIn", icon: Linkedin, action: () => window.open("https://www.linkedin.com/in/iseoluwa-emmanuel-7503a234b/", "_blank"), category: "Links" },
+    { id: "twitter", label: "Open Twitter", icon: Twitter, action: () => window.open("https://x.com/Manny__tech", "_blank"), category: "Links" },
   ];
 
   const filtered = query

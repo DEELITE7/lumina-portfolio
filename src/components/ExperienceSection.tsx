@@ -4,28 +4,11 @@ import { Briefcase } from "lucide-react";
 
 const experiences = [
   {
-    role: "Senior Frontend Engineer",
-    company: "TechVision Inc.",
-    period: "2023 — Present",
-    description: "Leading the frontend architecture for a SaaS platform serving 500K+ users. Building design systems and mentoring junior developers.",
-  },
-  {
-    role: "Full-Stack Developer",
-    company: "StartupHub",
-    period: "2021 — 2023",
-    description: "Built and launched 3 products from scratch. Implemented real-time features, payment integrations, and scalable APIs.",
-  },
-  {
-    role: "Frontend Developer",
-    company: "DigitalCraft Agency",
-    period: "2020 — 2021",
-    description: "Developed responsive web applications for enterprise clients. Focused on performance optimization and accessibility.",
-  },
-  {
-    role: "Junior Developer",
-    company: "CodeBase Co.",
-    period: "2019 — 2020",
-    description: "Started my career building React components and learning best practices in a fast-paced team environment.",
+    role: "Junior Cloud Engineer",
+    company: "Nexedge Technology",
+    period: "2024 — 2025",
+    description:
+      "Assisted in provisioning and managing cloud infrastructure using Terraform and AWS. Supported CI/CD pipeline setup, monitored deployments, and contributed to internal tooling and test applications for the engineering team.",
   },
 ];
 
@@ -60,15 +43,13 @@ const ExperienceSection = () => {
                 initial={{ opacity: 0, y: 40 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: i * 0.15 }}
-                className={`relative flex items-start gap-8 ${
-                  i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                }`}
+                className="relative flex items-start gap-8 md:flex-row"
               >
                 {/* Timeline dot */}
                 <div className="absolute left-6 md:left-1/2 w-3 h-3 rounded-full bg-primary -translate-x-1.5 mt-6 glow-primary z-10" />
 
                 {/* Card */}
-                <div className={`ml-16 md:ml-0 md:w-[calc(50%-2rem)] ${i % 2 === 0 ? "md:pr-4" : "md:pl-4"}`}>
+                <div className="ml-16 md:ml-0 md:w-[calc(50%-2rem)] md:pr-4">
                   <motion.div
                     className="glass rounded-xl p-6 group"
                     whileHover={{ y: -4, boxShadow: "0 0 30px -10px hsl(187 80% 55% / 0.2)" }}

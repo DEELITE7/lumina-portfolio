@@ -10,19 +10,21 @@ const Footer = () => {
             className="text-sm text-muted-foreground flex items-center gap-1"
             whileHover={{ color: "hsl(187 80% 55%)" }}
           >
-            © {new Date().getFullYear()} Alex Morgan. Built with{" "}
+            © {new Date().getFullYear()} Elebiemayo Iseoluwa. Built with{" "}
             <Heart size={14} className="text-primary" /> and React
           </motion.p>
 
           <div className="flex items-center gap-4">
             {[
-              { icon: Github, href: "#", label: "GitHub" },
-              { icon: Linkedin, href: "#", label: "LinkedIn" },
-              { icon: Twitter, href: "#", label: "Twitter" },
+              { icon: Github, href: "https://github.com/MANNYTECH01", label: "GitHub" },
+              { icon: Linkedin, href: "https://www.linkedin.com/in/iseoluwa-emmanuel-7503a234b/", label: "LinkedIn" },
+              { icon: Twitter, href: "https://x.com/Manny__tech", label: "Twitter" },
             ].map(({ icon: Icon, href, label }) => (
               <motion.a
                 key={label}
                 href={href}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label={label}
                 className="text-muted-foreground hover:text-primary transition-colors"
                 whileHover={{ y: -2 }}

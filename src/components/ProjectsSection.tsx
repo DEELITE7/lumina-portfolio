@@ -10,7 +10,7 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
   const [hovered, setHovered] = useState(false);
 
   const icons: Record<string, string> = {
-    "full-stack": "💻", frontend: "🎨", backend: "⚙️", mobile: "📱", ai: "🤖", "open-source": "🌐", dsa: "🧩",
+    "full-stack": "💻", frontend: "🎨", backend: "⚙️", mobile: "📱", ai: "🤖", "open-source": "🌐", dsa: "🧩", cloud: "☁️",
   };
 
   return (
@@ -23,14 +23,23 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
       onMouseLeave={() => setHovered(false)}
       className="group relative rounded-2xl glass overflow-hidden cursor-pointer"
     >
-      <div className="h-48 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center relative overflow-hidden">
-        <motion.span
-          className="text-6xl"
-          animate={hovered ? { scale: 1.2, rotate: 10 } : { scale: 1, rotate: 0 }}
-          transition={{ type: "spring", stiffness: 300 }}
-        >
-          {icons[project.category] || "📊"}
-        </motion.span>
+      {/* Project thumbnail or fallback gradient */}
+      <div className="h-48 relative overflow-hidden">
+        {project.thumbnail_url ? (
+          <img
+            src={project.thumbnail_url}
+            alt={project.title}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            loading="lazy"
+            width={800}
+            height={512}
+          />
+        ) : (
+          <div className="w-full h-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
+            <span className="text-6xl">{icons[project.category] || "📊"}</span>
+          </div>
+        )}
+        {/* Hover overlay with links */}
         <motion.div
           className="absolute inset-0 bg-background/80 flex items-center justify-center gap-4"
           initial={{ opacity: 0 }}
@@ -95,6 +104,15 @@ const ProjectsSection = () => {
             <ProjectCard key={project.id} project={project} index={i} />
           ))}
         </div>
+        {projects.length === 0 && (
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : {}}
+            className="text-center text-muted-foreground py-16"
+          >
+            Projects loading...
+          </motion.p>
+        )}
       </div>
     </section>
   );
