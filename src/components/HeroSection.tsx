@@ -123,7 +123,8 @@ const HeroSection = () => {
           </motion.button>
           <motion.a
             href="/resume.pdf"
-            download
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-7 py-3 rounded-xl border border-border/50 font-medium text-sm text-muted-foreground hover:text-foreground hover:border-border transition-colors flex items-center justify-center gap-2"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
