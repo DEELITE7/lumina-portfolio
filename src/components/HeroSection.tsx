@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Twitter, Download, ArrowDown, Mail } from "lucide-react";
+import { Github, Linkedin, Twitter, ExternalLink, ArrowDown, Mail } from "lucide-react";
 
 const HeroSection = () => {
   const firstName = "Elebiemayo";
@@ -129,7 +129,7 @@ const HeroSection = () => {
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
           >
-            <Download size={14} />
+            <ExternalLink size={14} />
             Resume
           </motion.a>
         </motion.div>
