@@ -2,12 +2,12 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 const skills = [
-  { name: "React / Next.js", level: 95 },
-  { name: "TypeScript", level: 90 },
-  { name: "Node.js", level: 85 },
-  { name: "UI/UX Design", level: 88 },
-  { name: "Python", level: 75 },
-  { name: "DevOps / Cloud", level: 70 },
+  { name: "GCP / Cloud Infrastructure", level: 90 },
+  { name: "Terraform / IaC", level: 85 },
+  { name: "Docker / Kubernetes", level: 80 },
+  { name: "Linux / Bash / PowerShell", level: 85 },
+  { name: "Python / JavaScript / TypeScript", level: 78 },
+  { name: "CI/CD / GitHub Actions", level: 82 },
 ];
 
 const AboutSection = () => {
@@ -49,15 +49,14 @@ const AboutSection = () => {
             </div>
 
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              I'm a backend and cloud developer focused on building reliable APIs,
-              cloud infrastructure, and server-side systems. I work with Node.js,
-              Express, PostgreSQL, Docker, and Terraform to deliver clean,
-              production-ready solutions.
+              I'm a B.Sc Computer Science student at the University of Lagos and a cloud
+              engineer focused on GCP, Terraform, Docker, and Kubernetes. I build and manage
+              cloud infrastructure, CI/CD pipelines, and containerized deployments.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              I enjoy solving real problems — from designing RESTful APIs and setting up
-              CI/CD pipelines to provisioning infrastructure as code. I'm always learning,
-              currently deepening my skills in AWS, containerization, and DevOps best practices.
+              Currently training at NexEdge Technologies, I work with VPC networking, IAM,
+              GKE, and GitHub Actions. I'm a DataCamp scholarship recipient and was selected
+              as one of 5 fellows for the Cloud Engineering Empower Fellowship (CEF).
             </p>
           </motion.div>
 

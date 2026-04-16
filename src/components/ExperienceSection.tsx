@@ -4,11 +4,18 @@ import { Briefcase } from "lucide-react";
 
 const experiences = [
   {
-    role: "Junior Cloud Engineer",
-    company: "Nexedge Technology",
-    period: "2024 — 2025",
+    role: "Cloud Engineer (Trainee)",
+    company: "NexEdge Technologies",
+    period: "2025 — Present",
     description:
-      "Assisted in provisioning and managing cloud infrastructure using Terraform and AWS. Supported CI/CD pipeline setup, monitored deployments, and contributed to internal tooling and test applications for the engineering team.",
+      "Provisioned and managed GCP infrastructure using Terraform (IaC). Configured VPC networks, managed VMs via Console and CLI, and implemented IAM roles. Built CI/CD pipelines with GitHub Actions, deployed containerized applications on GKE, and managed Docker containers integrated with GCP Artifact Registry.",
+  },
+  {
+    role: "Computer Operator",
+    company: "Wasma Cybercafé",
+    period: "2022 — 2024",
+    description:
+      "Facilitated online payments, prepared and filed legal documents with the High Court and Magistrate Court, assisted customers with digital applications and registrations, and provided document processing and internet support services.",
   },
 ];
 
