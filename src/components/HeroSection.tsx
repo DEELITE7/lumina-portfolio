@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Twitter, Download, ArrowDown, Mail } from "lucide-react";
+import { Github, Linkedin, Twitter, ExternalLink, ArrowDown, Mail } from "lucide-react";
 
 const HeroSection = () => {
   const firstName = "Elebiemayo";
@@ -123,12 +123,13 @@ const HeroSection = () => {
           </motion.button>
           <motion.a
             href="/resume.pdf"
-            download
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-7 py-3 rounded-xl border border-border/50 font-medium text-sm text-muted-foreground hover:text-foreground hover:border-border transition-colors flex items-center justify-center gap-2"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
           >
-            <Download size={14} />
+            <ExternalLink size={14} />
             Resume
           </motion.a>
         </motion.div>
